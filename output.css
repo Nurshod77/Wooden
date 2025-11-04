@@ -6,6 +6,7 @@
 
 body {
   font-family: "Cardo", serif;
+  overflow-x: hidden;
 }
 
 header {
@@ -25,6 +26,9 @@ header nav a {
   color: black;
   font-family: "Cardo", serif;
 }
+header img {
+  max-width: 150px;
+}
 
 section {
   padding: 80px 50px;
@@ -42,6 +46,11 @@ section {
 .hero h1 {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding-bottom: 30px;
+  font-size: 2.5rem;
+  line-height: 1.3;
+}
+.hero h1 br {
+  display: block;
 }
 .hero button {
   border: none;
@@ -51,6 +60,12 @@ section {
   padding: 10px 50px;
   color: white;
   font-size: 19px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.hero button:hover {
+  background: white;
+  color: black;
 }
 
 .hero-bottom {
@@ -60,18 +75,24 @@ section {
   gap: 100px;
   background-color: white;
   padding: 50px 50px;
+  flex-wrap: wrap;
 }
 .hero-bottom .d-bottom {
   display: flex;
   gap: 15px;
   align-items: center;
 }
+.hero-bottom .d-bottom img {
+  width: 40px;
+  height: 40px;
+}
 
 .images {
   display: flex;
+  flex-wrap: wrap;
 }
 .images img {
-  width: 316px;
+  width: 25%;
   height: auto;
 }
 
@@ -85,6 +106,11 @@ section {
   align-items: center;
   text-align: right;
   font-family: "Cardo", serif;
+  flex-wrap: wrap;
+}
+.cloe .katta-cloe .smaller-cloe {
+  flex: 1;
+  min-width: 300px;
 }
 .cloe .katta-cloe .new-p {
   color: rgb(188, 20, 20);
@@ -92,6 +118,7 @@ section {
 }
 .cloe .katta-cloe img {
   width: 700px;
+  max-width: 100%;
   height: auto;
 }
 .cloe .katta-cloe h2 {
@@ -108,6 +135,7 @@ section {
   color: black;
   font-size: 18px;
   font-family: "Cardo", "serif";
+  text-decoration: underline;
 }
 .cloe .katta-pelican {
   display: flex;
@@ -116,14 +144,15 @@ section {
   align-items: center;
   text-align: left;
   font-family: "Cardo", serif;
+  flex-wrap: wrap;
 }
-.cloe .katta-pelican h2 {
-  font-family: "Roboto", serif;
-  padding-bottom: 20px;
-  font-size: 35px;
+.cloe .katta-pelican .smaller-pelican {
+  flex: 1;
+  min-width: 300px;
 }
 .cloe .katta-pelican img {
   width: 700px;
+  max-width: 100%;
   height: auto;
 }
 .cloe .katta-pelican h2 {
@@ -140,6 +169,7 @@ section {
   color: black;
   font-size: 18px;
   font-family: "Cardo", "serif";
+  text-decoration: underline;
 }
 
 .picces {
@@ -160,15 +190,20 @@ section {
   display: flex;
   gap: 10px;
   margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .picces .photos img {
-  width: 550px;
+  width: 350px;
 }
 .picces .messege {
   text-align: center;
   font-style: italic;
   padding-top: 130px;
   font-size: 18px;
+}
+.picces .messege br {
+  display: block;
 }
 .picces .subject {
   padding-top: 40px;
@@ -186,6 +221,10 @@ section {
   background-color: black;
   margin-top: 30px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.picces .skip .round:hover {
+  transform: scale(1.3);
 }
 
 .map {
@@ -193,10 +232,13 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-wrap: wrap;
+  padding: 40px 20px;
 }
 .map .map-div {
   width: 290px;
-  height: 290px;
+  min-height: 290px;
+  padding: 20px;
 }
 .map .map-div img {
   width: 70px;
@@ -225,6 +267,7 @@ section {
 }
 .bottom-div img {
   width: 100%;
+  max-width: 100%;
 }
 
 footer {
@@ -236,6 +279,7 @@ footer .flex-div {
   gap: 190px;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 }
 footer .flex-div h4 {
   font-weight: 700;
@@ -249,6 +293,7 @@ footer .flex-div .column {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 200px;
 }
 footer .dr-b {
   display: flex;
@@ -257,11 +302,282 @@ footer .dr-b {
   margin-top: 30px;
   border-top: 1px solid black;
   padding-top: 30px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 footer .made {
   text-align: center;
   font-size: 20px;
   padding-top: 30px;
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+/* Tablet (768px va undan kichik) */
+@media screen and (max-width: 768px) {
+  header {
+    gap: 50px;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  header nav {
+    gap: 15px;
+  }
+  header nav a {
+    font-size: 14px;
+  }
+  header img {
+    max-width: 120px;
+  }
+  section {
+    padding: 60px 30px;
+  }
+  .hero {
+    padding-top: 100px;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+    padding: 0 20px 30px;
+  }
+  .hero h1 br {
+    display: none;
+  }
+  .hero button {
+    padding: 8px 40px;
+    font-size: 17px;
+  }
+  .hero-bottom {
+    gap: 40px;
+    padding: 40px 20px;
+  }
+  .hero-bottom .d-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-bottom .d-bottom p {
+    font-size: 14px;
+  }
+  .images img {
+    width: 50%;
+  }
+  .cloe {
+    padding: 60px 30px;
+  }
+  .cloe .katta-cloe {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+  .cloe .katta-cloe .smaller-cloe br {
+    display: none;
+  }
+  .cloe .katta-cloe h2 {
+    font-size: 28px;
+  }
+  .cloe .katta-cloe .cloe-p {
+    font-size: 18px;
+  }
+  .cloe .katta-pelican {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  .cloe .katta-pelican .smaller-pelican br {
+    display: none;
+  }
+  .cloe .katta-pelican h2 {
+    font-size: 28px;
+  }
+  .cloe .katta-pelican .cloe-p {
+    font-size: 18px;
+  }
+  .picces {
+    padding: 60px 30px;
+  }
+  .picces .picces-h2 {
+    font-size: 28px;
+  }
+  .picces .photos {
+    flex-direction: column;
+  }
+  .picces .photos img {
+    width: 100%;
+  }
+  .picces .messege {
+    padding-top: 60px;
+    font-size: 16px;
+  }
+  .picces .messege br {
+    display: none;
+  }
+  .map {
+    gap: 20px;
+  }
+  .map .map-div {
+    width: 100%;
+    max-width: 350px;
+  }
+  footer {
+    padding: 40px 30px;
+  }
+  footer .flex-div {
+    gap: 60px;
+  }
+  footer .flex-div .column {
+    min-width: 150px;
+  }
+  footer .dr-b {
+    gap: 30px;
+    text-align: center;
+  }
+  footer .dr-b p {
+    font-size: 14px;
+  }
+}
+/* Mobile (480px va undan kichik) */
+@media screen and (max-width: 480px) {
+  header {
+    gap: 20px;
+    padding: 10px 15px;
+  }
+  header nav {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  header nav a {
+    font-size: 13px;
+  }
+  header img {
+    max-width: 100px;
+  }
+  section {
+    padding: 40px 15px;
+  }
+  .hero {
+    padding-top: 80px;
+    height: 80vh;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+    padding: 0 10px 20px;
+  }
+  .hero button {
+    padding: 8px 30px;
+    font-size: 16px;
+  }
+  .hero-bottom {
+    gap: 20px;
+    padding: 30px 15px;
+  }
+  .hero-bottom .d-bottom img {
+    width: 35px;
+    height: 35px;
+  }
+  .hero-bottom .d-bottom p {
+    font-size: 13px;
+  }
+  .images img {
+    width: 100%;
+  }
+  .cloe {
+    padding: 40px 15px;
+  }
+  .cloe .katta-cloe {
+    gap: 20px;
+  }
+  .cloe .katta-cloe h2 {
+    font-size: 24px;
+  }
+  .cloe .katta-cloe .cloe-p {
+    font-size: 16px;
+  }
+  .cloe .katta-cloe p {
+    font-size: 16px !important;
+  }
+  .cloe .katta-cloe .shop {
+    font-size: 16px;
+  }
+  .cloe .katta-pelican {
+    gap: 20px;
+  }
+  .cloe .katta-pelican h2 {
+    font-size: 24px;
+  }
+  .cloe .katta-pelican .cloe-p {
+    font-size: 16px;
+  }
+  .cloe .katta-pelican p {
+    font-size: 16px !important;
+  }
+  .cloe .katta-pelican .shop {
+    font-size: 16px;
+  }
+  .picces {
+    padding: 40px 15px;
+  }
+  .picces .picces-h2 {
+    font-size: 24px;
+  }
+  .picces .picces-p {
+    font-size: 14px;
+  }
+  .picces .messege {
+    padding-top: 40px;
+    font-size: 15px;
+  }
+  .picces .subject {
+    padding-top: 20px;
+    font-size: 16px;
+  }
+  .map .map-div {
+    padding: 15px;
+  }
+  .map .map-div h2 {
+    font-size: 20px;
+  }
+  .map .map-div p {
+    font-size: 14px;
+  }
+  .map .map-div p br {
+    display: none;
+  }
+  .bottom-div {
+    padding: 20px 15px;
+  }
+  .bottom-div p {
+    font-size: 16px;
+  }
+  footer {
+    padding: 30px 15px;
+  }
+  footer .flex-div {
+    gap: 30px;
+  }
+  footer .flex-div h4 {
+    font-size: 20px;
+  }
+  footer .flex-div .column {
+    min-width: 120px;
+    font-size: 14px;
+  }
+  footer .dr-b {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  footer .dr-b div {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  footer .dr-b p {
+    font-size: 12px;
+  }
+  footer .made {
+    font-size: 16px;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */
